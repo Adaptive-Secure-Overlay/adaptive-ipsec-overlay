@@ -13,7 +13,7 @@ intermediate node.
 ## Install
 
 ```bash
-sudo NODE_NAME=User1 CONFIG_SOURCE=../../examples/overlay.sample.json ./install.sh
+sudo NODE_NAME=User1 CONFIG_SOURCE=../examples/overlay.sample.json ./install.sh
 ```
 
 ## Check

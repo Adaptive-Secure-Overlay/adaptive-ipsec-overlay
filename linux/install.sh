@@ -2,7 +2,7 @@
 set -euo pipefail
 
 NODE_NAME="${1:-${NODE_NAME:-}}"
-PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 INSTALL_DIR="${INSTALL_DIR:-/opt/adaptive-ipsec-overlay}"
 CONFIG_DIR="${CONFIG_DIR:-/etc/adaptive-ipsec-overlay}"
 CONFIG_SOURCE="${CONFIG_SOURCE:-}"

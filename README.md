@@ -9,18 +9,18 @@ established.
 
 This repository contains three deployment profiles:
 
-- `install/linux`: Linux endpoint/intermediate node with strongSwan integration.
-- `install/openwrt`: OpenWRT endpoint/intermediate node with strongSwan integration.
-- `install/mikrotik`: MikroTik RouterOS v7 container profile for intermediate
+- `linux`: Linux endpoint/intermediate node with strongSwan integration.
+- `openwrt`: OpenWRT endpoint/intermediate node with strongSwan integration.
+- `routeros7`: MikroTik RouterOS v7 container profile for intermediate
   overlay operation.
 
 ## Platform profiles
 
 | Platform | Role | Installer | Notes |
 | --- | --- | --- | --- |
-| Linux | Endpoint and intermediate | `install/linux/install.sh` | strongSwan, nftables, XFRM bypass, systemd |
-| OpenWRT | Endpoint and intermediate | `install/openwrt/install.sh` | strongSwan, nftables, init.d |
-| RouterOS 7 | Intermediate only | `install/mikrotik/install-container.rsc` | RouterOS container package, overlay relay daemon |
+| Linux | Endpoint and intermediate | `linux/install.sh` | strongSwan, nftables, XFRM bypass, systemd |
+| OpenWRT | Endpoint and intermediate | `openwrt/install.sh` | strongSwan, nftables, init.d |
+| RouterOS 7 | Intermediate only | `routeros7/install-container.rsc` | RouterOS container package, overlay relay daemon |
 
 ## Current status
 
@@ -54,7 +54,7 @@ For real deployments, replace all sample passwords.
 On a Debian/Ubuntu endpoint:
 
 ```bash
-sudo NODE_NAME=User1 CONFIG_SOURCE=examples/overlay.sample.json ./install/linux/install.sh
+sudo NODE_NAME=User1 CONFIG_SOURCE=examples/overlay.sample.json ./linux/install.sh
 ```
 
 The installer copies code to `/opt/adaptive-ipsec-overlay`, writes
@@ -71,7 +71,7 @@ tail -f /var/log/hybrid-overlay-User1.log
 Copy this repository or release tarball to the OpenWRT router, then run:
 
 ```bash
-NODE_NAME=User11 CONFIG_SOURCE=examples/overlay.sample.json ./install/openwrt/install.sh
+NODE_NAME=User11 CONFIG_SOURCE=examples/overlay.sample.json ./openwrt/install.sh
 ```
 
 Check service state:
@@ -89,7 +89,7 @@ Edit and import:
 /import file-name=install-container.rsc
 ```
 
-See `install/mikrotik/README.md`.
+See `routeros7/README.md`.
 
 ## Build release tarball
 

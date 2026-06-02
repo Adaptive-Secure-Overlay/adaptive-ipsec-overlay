@@ -13,7 +13,7 @@ OpenWRT router with strongSwan.
 ## Install
 
 ```bash
-NODE_NAME=User11 CONFIG_SOURCE=../../examples/overlay.sample.json ./install.sh
+NODE_NAME=User11 CONFIG_SOURCE=../examples/overlay.sample.json ./install.sh
 ```
 
 ## Check
