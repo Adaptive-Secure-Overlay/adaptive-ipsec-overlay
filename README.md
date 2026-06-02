@@ -1,5 +1,7 @@
 # Adaptive IPsec Overlay
 
+![Adaptive IPsec Overlay](assets/banner.svg)
+
 Adaptive IPsec Overlay is an experimental control-plane overlay for IPsec/IKE
 research. It routes IKE control traffic through selected intermediate nodes and
 lets ESP data traffic continue directly between endpoints after the IPsec SA is
@@ -11,6 +13,14 @@ This repository contains three deployment profiles:
 - `install/openwrt`: OpenWRT endpoint/intermediate node with strongSwan integration.
 - `install/mikrotik`: MikroTik RouterOS v7 container profile for intermediate
   overlay operation.
+
+## Platform profiles
+
+| Platform | Role | Installer | Notes |
+| --- | --- | --- | --- |
+| Linux | Endpoint and intermediate | `install/linux/install.sh` | strongSwan, nftables, XFRM bypass, systemd |
+| OpenWRT | Endpoint and intermediate | `install/openwrt/install.sh` | strongSwan, nftables, init.d |
+| RouterOS 7 | Intermediate only | `install/mikrotik/install-container.rsc` | RouterOS container package, overlay relay daemon |
 
 ## Current status
 

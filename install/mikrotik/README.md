@@ -1,4 +1,4 @@
-# MikroTik intermediate node
+# RouterOS 7 / MikroTik profile
 
 RouterOS cannot run the Linux endpoint path directly. This package supports
 MikroTik as an intermediate overlay node through RouterOS v7 containers.
