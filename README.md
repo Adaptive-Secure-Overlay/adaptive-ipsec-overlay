@@ -10,11 +10,11 @@ established.
 This repository is the project hub. Platform packages live in separate
 repositories:
 
-- [adaptive-ipsec-overlay-linux](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-linux):
+- [adaptive-ipsec-overlay-linux](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-linux):
   Linux endpoint/intermediate node with strongSwan integration.
-- [adaptive-ipsec-overlay-openwrt](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-openwrt):
+- [adaptive-ipsec-overlay-openwrt](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-openwrt):
   OpenWRT endpoint/intermediate node with strongSwan integration.
-- [adaptive-ipsec-overlay-routeros7](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-routeros7):
+- [adaptive-ipsec-overlay-routeros7](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-routeros7):
   MikroTik RouterOS v7 container profile for intermediate overlay operation.
 
 This hub repository keeps the combined project view, common assets, and shared
@@ -60,7 +60,7 @@ For real deployments, replace all sample passwords.
 
 Dedicated package:
 
-- [adaptive-ipsec-overlay-linux](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-linux)
+- [adaptive-ipsec-overlay-linux](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-linux)
 
 On a Debian/Ubuntu endpoint:
 
@@ -81,7 +81,7 @@ tail -f /var/log/hybrid-overlay-User1.log
 
 Dedicated package:
 
-- [adaptive-ipsec-overlay-openwrt](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-openwrt)
+- [adaptive-ipsec-overlay-openwrt](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-openwrt)
 
 Copy this repository or release tarball to the OpenWRT router, then run:
 
@@ -100,7 +100,7 @@ tail -f /var/log/hybrid-overlay-User11.log
 
 Dedicated package:
 
-- [adaptive-ipsec-overlay-routeros7](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-routeros7)
+- [adaptive-ipsec-overlay-routeros7](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-routeros7)
 
 Edit and import:
 
