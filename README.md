@@ -1,24 +1,39 @@
-# Adaptive IPsec Overlay
+# Adaptive Secure Overlay - IPsec Track Hub
 
-![Adaptive IPsec Overlay](assets/banner.svg)
+![Adaptive Secure Overlay](assets/banner.svg)
 
-Adaptive IPsec Overlay is an experimental control-plane overlay for IPsec/IKE
-research. It routes IKE control traffic through selected intermediate nodes and
-lets ESP data traffic continue directly between endpoints after the IPsec SA is
-established.
+Adaptive IPsec Overlay is the active IPsec/IKE research track inside the wider
+Adaptive Secure Overlay organization. It routes IKE control traffic through
+selected intermediate nodes and then lets ESP data traffic continue directly
+between endpoints after the IPsec SA is established.
 
-This repository is the project hub. Platform packages live in separate
-repositories:
+This repository is the main hub for the current public implementation track.
+Platform packages and forward-looking branches live in separate repositories:
 
 - [adaptive-ipsec-overlay-linux](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-linux):
-  Linux endpoint/intermediate node with strongSwan integration.
+  Linux endpoint/intermediate node package with strongSwan integration.
 - [adaptive-ipsec-overlay-openwrt](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-openwrt):
-  OpenWRT endpoint/intermediate node with strongSwan integration.
+  OpenWRT endpoint/intermediate node package with strongSwan integration.
 - [adaptive-ipsec-overlay-routeros7](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-routeros7):
   MikroTik RouterOS v7 container profile for intermediate overlay operation.
+- [adaptive-secure-overlay-windows](https://github.com/Adaptive-Secure-Overlay/adaptive-secure-overlay-windows):
+  future Windows endpoint and client track.
+- [adaptive-secure-overlay-wireguard](https://github.com/Adaptive-Secure-Overlay/adaptive-secure-overlay-wireguard):
+  future WireGuard compatibility track.
 
-This hub repository keeps the combined project view, common assets, and shared
-documentation for the lab.
+This hub keeps the shared project view, common assets, and combined
+documentation for the current lab implementation.
+
+## Repository family
+
+| Repository | Role | Notes |
+| --- | --- | --- |
+| `adaptive-ipsec-overlay` | Hub | Shared docs, assets, project overview |
+| `adaptive-ipsec-overlay-linux` | Package | Linux endpoint/intermediate node |
+| `adaptive-ipsec-overlay-openwrt` | Package | OpenWRT endpoint/intermediate node |
+| `adaptive-ipsec-overlay-routeros7` | Package | RouterOS 7 intermediate relay profile |
+| `adaptive-secure-overlay-windows` | Track | Planned Windows endpoint/client branch |
+| `adaptive-secure-overlay-wireguard` | Track | Planned WireGuard compatibility branch |
 
 ## Platform profiles
 
@@ -38,6 +53,20 @@ to flow directly between endpoints.
 
 The MikroTik path is intermediate-only. It runs the overlay daemon in a RouterOS
 container and does not make RouterOS a strongSwan ESP endpoint.
+
+## Scope of this track
+
+The active public implementation is centered on adaptive establishment for
+IPsec-style secure channels:
+
+- multi-hop control-plane traversal during setup;
+- split route knowledge across selected intermediate nodes;
+- direct ESP-style data-plane after security associations are established;
+- lab validation across Linux, OpenWRT, RouterOS, and EVE-NG scenarios.
+
+The broader organization name stays protocol-agnostic on purpose. Windows and
+WireGuard remain separate tracks so the research is not locked to a single
+transport family.
 
 ## Configuration
 
