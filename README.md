@@ -7,20 +7,26 @@ research. It routes IKE control traffic through selected intermediate nodes and
 lets ESP data traffic continue directly between endpoints after the IPsec SA is
 established.
 
-This repository contains three deployment profiles:
+This repository is the project hub. Platform packages live in separate
+repositories:
 
-- `linux`: Linux endpoint/intermediate node with strongSwan integration.
-- `openwrt`: OpenWRT endpoint/intermediate node with strongSwan integration.
-- `routeros7`: MikroTik RouterOS v7 container profile for intermediate
-  overlay operation.
+- [adaptive-ipsec-overlay-linux](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-linux):
+  Linux endpoint/intermediate node with strongSwan integration.
+- [adaptive-ipsec-overlay-openwrt](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-openwrt):
+  OpenWRT endpoint/intermediate node with strongSwan integration.
+- [adaptive-ipsec-overlay-routeros7](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-routeros7):
+  MikroTik RouterOS v7 container profile for intermediate overlay operation.
+
+This hub repository keeps the combined project view, common assets, and shared
+documentation for the lab.
 
 ## Platform profiles
 
-| Platform | Role | Installer | Notes |
-| --- | --- | --- | --- |
-| Linux | Endpoint and intermediate | `linux/install.sh` | strongSwan, nftables, XFRM bypass, systemd |
-| OpenWRT | Endpoint and intermediate | `openwrt/install.sh` | strongSwan, nftables, init.d |
-| RouterOS 7 | Intermediate only | `routeros7/install-container.rsc` | RouterOS container package, overlay relay daemon |
+| Platform | Package repo | Role | Installer | Notes |
+| --- | --- | --- | --- | --- |
+| Linux | `adaptive-ipsec-overlay-linux` | Endpoint and intermediate | `install.sh` | strongSwan, nftables, XFRM bypass, systemd |
+| OpenWRT | `adaptive-ipsec-overlay-openwrt` | Endpoint and intermediate | `install.sh` | strongSwan, nftables, init.d |
+| RouterOS 7 | `adaptive-ipsec-overlay-routeros7` | Intermediate only | `install-container.rsc` | RouterOS container package, overlay relay daemon |
 
 ## Current status
 
@@ -35,7 +41,8 @@ container and does not make RouterOS a strongSwan ESP endpoint.
 
 ## Configuration
 
-Copy and edit a config:
+Each platform package ships with `examples/overlay.sample.json`. Copy and edit
+that file for the target node:
 
 ```bash
 cp examples/overlay.sample.json /etc/adaptive-ipsec-overlay/overlay.json
@@ -50,6 +57,10 @@ Each user entry needs:
 For real deployments, replace all sample passwords.
 
 ## Linux install
+
+Dedicated package:
+
+- [adaptive-ipsec-overlay-linux](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-linux)
 
 On a Debian/Ubuntu endpoint:
 
@@ -68,6 +79,10 @@ tail -f /var/log/hybrid-overlay-User1.log
 
 ## OpenWRT install
 
+Dedicated package:
+
+- [adaptive-ipsec-overlay-openwrt](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-openwrt)
+
 Copy this repository or release tarball to the OpenWRT router, then run:
 
 ```bash
@@ -83,24 +98,14 @@ tail -f /var/log/hybrid-overlay-User11.log
 
 ## MikroTik intermediate install
 
+Dedicated package:
+
+- [adaptive-ipsec-overlay-routeros7](https://github.com/ZuyVladislav/adaptive-ipsec-overlay-routeros7)
+
 Edit and import:
 
 ```routeros
 /import file-name=install-container.rsc
-```
-
-See `routeros7/README.md`.
-
-## Build release tarball
-
-```bash
-./scripts/build-release-tar.sh
-```
-
-The tarball is written to:
-
-```text
-dist/adaptive-ipsec-overlay.tar.gz
 ```
 
 ## Security note
