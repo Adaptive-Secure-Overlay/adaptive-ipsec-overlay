@@ -2,7 +2,8 @@
 
 ![Adaptive Secure Overlay](assets/banner.svg)
 
-English | [Русская версия](README.ru.md)
+[![English](https://img.shields.io/badge/language-English-0f172a?style=flat-square)](README.md)
+[![Русская версия](https://img.shields.io/badge/language-Русская%20версия-0369a1?style=flat-square)](README.ru.md)
 
 [![Track](https://img.shields.io/badge/track-ipsec%20track-0f172a?style=for-the-badge)](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay)
 [![Status](https://img.shields.io/badge/status-research%20prototype-15803d?style=for-the-badge)](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay)
