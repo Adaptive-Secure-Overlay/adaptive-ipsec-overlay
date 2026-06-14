@@ -9,9 +9,9 @@
 [![Status](https://img.shields.io/badge/status-research%20prototype-15803d?style=for-the-badge)](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay)
 [![Scope](https://img.shields.io/badge/architecture-routed%20control--plane-0369a1?style=for-the-badge)](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay)
 
-Adaptive Secure Overlay is an IPsec-focused research hub for adaptive secure channel startup:
-routed control-plane setup across selected intermediate nodes with direct protected
-data-plane continuation.
+This repository is the IPsec hub of the project.
+
+It is the main public entry point for the current implementation branch: the control-plane logic, lab topology, platform packages and supporting notes all meet here.
 
 ## Pinned repositories
 
@@ -54,14 +54,12 @@ data-plane continuation.
 
 </div>
 
-## Core idea
+## What this branch does
 
-- **Control-plane is routed.** IKE/IKE-like exchange can be relayed through X1/X2.
-- **Data-plane is optimized.** Protected packets are forwarded directly once a session
-  is agreed.
-- **Route knowledge is partitioned** between relay roles for controlled exposure.
-- **Cross-platform path.** Current research baseline supports Linux/OpenWRT and
-  RouterOS relay mode in EVE-NG lab setups.
+- **The setup path is flexible.** IKE or IKE-like exchange can be relayed through selected intermediate nodes instead of one obvious direct path.
+- **Protected traffic stays simple.** Once the session is agreed, data traffic can go directly between endpoints.
+- **Route knowledge is limited by role.** Different relay nodes may know different parts of the path.
+- **The implementation stays grounded.** Linux, OpenWRT and RouterOS 7 are the current public IPsec baseline.
 
 ## Quick start
 

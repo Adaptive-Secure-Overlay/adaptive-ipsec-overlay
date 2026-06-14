@@ -5,7 +5,7 @@
 [![English version](https://img.shields.io/badge/language-English-0f172a?style=flat-square)](README.md)
 [![Русская версия](https://img.shields.io/badge/language-Русская%20версия-0369a1?style=flat-square)](README.ru.md)
 
-Adaptive Secure Overlay IPsec Hub — это центральный репозиторий IPsec-направления проекта. Здесь собрана общая идея routed control-plane, архитектурная логика overlay и ссылки на платформенные реализации.
+Adaptive Secure Overlay IPsec Hub — это центральный репозиторий IPsec-направления проекта. Здесь собраны общая логика routed control-plane, архитектурная схема overlay, лабораторная база и ссылки на платформенные реализации.
 
 ## Основные репозитории
 
@@ -20,9 +20,9 @@ Adaptive Secure Overlay IPsec Hub — это центральный репози
 - [adaptive-ipsec-overlay-windows](https://github.com/Adaptive-Secure-Overlay/adaptive-ipsec-overlay-windows) — Windows IPsec client track
 - [adaptive-wireguard-overlay](https://github.com/Adaptive-Secure-Overlay/adaptive-wireguard-overlay) — WireGuard compatibility stub
 
-## Базовая идея
+## Что делает эта ветка
 
-- Control-plane маршрутизируется через выбранные промежуточные узлы.
-- После установления защищённой сессии data-plane идёт напрямую.
+- Управляющий обмен может идти не по прямому пути, а через выбранные промежуточные узлы.
+- После установления защищённой сессии полезный трафик может идти напрямую между конечными узлами.
 - Знание маршрута и служебных параметров по возможности разделяется между ролями.
 - IPsec сейчас является основной публичной реализацией этой схемы.
