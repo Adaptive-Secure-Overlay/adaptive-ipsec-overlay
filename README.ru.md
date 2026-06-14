@@ -2,7 +2,8 @@
 
 ![Adaptive Secure Overlay](assets/banner.svg)
 
-[English version](README.md) | Русская версия
+[![English version](https://img.shields.io/badge/language-English-0f172a?style=flat-square)](README.md)
+[![Русская версия](https://img.shields.io/badge/language-Русская%20версия-0369a1?style=flat-square)](README.ru.md)
 
 Adaptive Secure Overlay IPsec Hub — это центральный репозиторий IPsec-направления проекта. Здесь собрана общая идея routed control-plane, архитектурная логика overlay и ссылки на платформенные реализации.
 
