@@ -1,1 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="480" viewBox="0 0 1440 480" role="img" aria-label="Adaptive Secure Overlay IPsec hub banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07101c"/>
+      <stop offset="0.58" stop-color="#0b1627"/>
+      <stop offset="1" stop-color="#121d31"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#63c5ff"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#45e0d1"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
 
+  <rect width="1440" height="480" fill="url(#bg)"/>
+
+  <g opacity="0.16">
+    <path d="M0 370C139 338 241 321 365 339C479 356 604 409 738 397C875 385 987 307 1120 310C1221 313 1309 330 1440 306V480H0Z" fill="#10253d"/>
+    <path d="M0 404C138 390 251 385 371 395C490 406 621 444 757 445C898 446 1020 397 1157 387C1242 381 1318 388 1440 377V480H0Z" fill="#153250"/>
+  </g>
+
+  <g transform="translate(88 76)">
+    <rect width="108" height="108" rx="25" fill="#0f2238" stroke="#2f80ed" stroke-width="2.5"/>
+    <path d="M54 22L85 40V76L54 94L23 76V40Z" fill="none" stroke="#e4f0ff" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M38 57H70M54 40V76" stroke="url(#blue)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <text x="228" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="60" font-weight="800" fill="#f8fbff">
+    Adaptive Secure Overlay
+  </text>
+  <text x="229" y="172" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#8fd3ff">
+    IPsec Track Hub
+  </text>
+  <text x="229" y="226" font-family="Segoe UI, Arial, sans-serif" font-size="23" fill="#d8e5f2">
+    Routed session establishment through intermediate nodes.
+  </text>
+  <text x="229" y="260" font-family="Segoe UI, Arial, sans-serif" font-size="23" fill="#d8e5f2">
+    Direct protected traffic between endpoints after the setup phase.
+  </text>
+
+  <g transform="translate(229 332)">
+    <rect width="176" height="44" rx="22" fill="#11263d" stroke="#2f4d74"/>
+    <circle cx="23" cy="22" r="6" fill="#63c5ff"/>
+    <text x="40" y="29" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#eff6ff">IKE / control-plane</text>
+
+    <rect x="192" width="142" height="44" rx="22" fill="#102930" stroke="#2e6e71"/>
+    <circle cx="215" cy="22" r="6" fill="#45e0d1"/>
+    <text x="232" y="29" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#ecfdf5">ESP / data-plane</text>
+  </g>
+
+  <g transform="translate(890 88)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="78" cy="72" r="22" fill="#0f2238" stroke="#63c5ff" stroke-width="4"/>
+    <circle cx="248" cy="62" r="22" fill="#10263b" stroke="#45e0d1" stroke-width="4"/>
+    <circle cx="405" cy="135" r="22" fill="#10263b" stroke="#63c5ff" stroke-width="4"/>
+    <circle cx="258" cy="252" r="24" fill="#13273e" stroke="#f8fbff" stroke-width="4"/>
+    <circle cx="88" cy="219" r="22" fill="#10263b" stroke="#45e0d1" stroke-width="4"/>
+
+    <path d="M100 72H226" stroke="url(#blue)" stroke-width="5"/>
+    <path d="M267 74L388 124" stroke="url(#teal)" stroke-width="5"/>
+    <path d="M392 151L278 238" stroke="#8ea8c6" stroke-width="4"/>
+    <path d="M106 204L235 243" stroke="#8ea8c6" stroke-width="4"/>
+    <path d="M90 94L95 196" stroke="#8ea8c6" stroke-width="4"/>
+    <path d="M242 82L105 204" stroke="#8ea8c6" stroke-width="4"/>
+
+    <circle cx="258" cy="252" r="44" stroke="#63c5ff" stroke-width="2" opacity="0.22"/>
+    <circle cx="258" cy="252" r="70" stroke="#45e0d1" stroke-width="2" opacity="0.1"/>
+
+    <text x="68" y="78" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f8fbff">A</text>
+    <text x="238" y="68" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f8fbff">X1</text>
+    <text x="394" y="141" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f8fbff">X2</text>
+    <text x="78" y="225" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#f8fbff">B</text>
+    <text x="226" y="258" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#f8fbff">IPSEC</text>
+  </g>
+</svg>
