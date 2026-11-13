@@ -8,3 +8,17 @@ dist/
 .vscode/
 overlay.json
 *.secret.json
+# Build artifacts for platforms/windows and platforms/android
+.vs/
+bin/
+obj/
+artifacts/tmp/
+platforms/android/.gradle/
+platforms/android/.tools/
+platforms/android/build/
+platforms/android/app/build/
+platforms/android/native-core/target/
+*.apk
+*.aab
+*.suo
+*.user

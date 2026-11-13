@@ -1,0 +1,88 @@
+# Adaptive Secure Overlay IPsec Android
+
+![Adaptive Secure Overlay](../../assets/banner.svg)
+
+[![English](https://img.shields.io/badge/language-English-0f172a?style=flat-square)](README.md)
+[![Русская версия](https://img.shields.io/badge/language-Русская%20версия-0369a1?style=flat-square)](README.ru.md)
+
+Android client prototype for the Adaptive Secure Overlay IPsec research track.
+
+Canonical repository name: `adaptive-ipsec-overlay-android`
+
+This repository is the Android-facing branch of the project: it already mirrors the lab routing semantics and session flow, but it does not yet install a live VPN or IPsec data plane on Android.
+
+## Current stage
+
+This is a real Android prototype branch, not a finished mobile client.
+
+- APK build is working
+- Android UI/state-model base is working
+- route selection and session-flow visualization are already present
+- Rust `native-core` has been started for the first real crypto/session layer
+- Kotlin and Rust now have a live JNI bridge
+- Rust `.so` libraries are now built and packaged into the APK for `arm64-v8a`, `armeabi-v7a` and `x86_64`
+- Android Emulator proof confirms the Rust self-test runs from the packaged APK
+- live transport and live VPN/IPsec integration are not wired yet
+
+See also: [STATUS.md](STATUS.md)
+
+## Current scope
+
+- Jetpack Compose Android client UI
+- node selection for `A` and `B`
+- `Random` or `Manual X1/X2` route mode
+- research loop toggle for small-topology experiments
+- session log visualizing:
+  - management session bootstrap
+  - inline privacy route setup
+  - sealed locator delivery
+  - ESP material preparation
+  - direct ESP activation target
+
+## Achieved so far
+
+- Jetpack Compose client shell for the Android track
+- overlay route semantics aligned with the lab model
+- session log and research-flow visualization
+- dedicated Rust crate for future Android crypto/core growth
+- Kotlin-to-Rust JNI bridge implemented and verified in Android Emulator
+- Android packaging path prepared for future `.so` delivery through `jniLibs`
+- real Android `.so` packaging now works through the project build flow
+- standalone APK build path for public repository use
+
+## Current limitations
+
+- overlay/session logic is still mocked at the client layer
+- Android `VpnService`, real transport and live peer exchange are not wired yet
+
+## Planned next layers
+
+1. move session state into a background service
+2. add config import and export
+3. move from JNI self-test to real Android-side session bootstrap calls
+4. add real overlay transport
+5. connect to Android `VpnService`
+
+## Build
+
+From the repository root:
+
+```powershell
+.\build-android-apk.ps1
+```
+
+Useful variants:
+
+- `.\build-android-apk.ps1 -Release`
+- `.\build-android-apk.ps1 -Offline`
+- `.\build-android-apk.ps1 -VerboseLog`
+
+On success the script prints the generated APK path from `app/build/outputs/apk/...`.
+
+## Native core
+
+- `native-core/` contains the first Rust crypto/core layer for Android.
+- Current scope: session bootstrap model, X25519 shared secret derivation, HKDF-SHA256 key schedule and first JNI exports.
+- Current milestone: `libadaptive_overlay_core.so` is now built for `arm64-v8a`, `armeabi-v7a` and `x86_64` and packaged through `jniLibs`.
+- Live proof milestone: the packaged APK was installed into an `x86_64` Android Emulator on `2026-06-14`, and `NativeCryptoBridge` reported `JNI live` with a passing Rust self-test.
+- `build-native-core.ps1` prepares the packaging layer and can later become the one-button native build step.

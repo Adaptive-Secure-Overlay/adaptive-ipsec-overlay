@@ -1,0 +1,62 @@
+{
+  "node_id": "Windows11-U13",
+  "listen_host": "127.0.0.1",
+  "listen_port": 9000,
+  "manual_sa_path": "..\\experiments\\manual-sa\\bin\\manual-sa.exe",
+  "manual_sa_install_mode": "validate_only",
+  "manual_sa_exempt_tcp_ports": "",
+  "manual_sa_state_dir": ".\\state",
+  "manual_sa_session_index_path": ".\\state\\sessions.index.json",
+  "peer_install_replay_cache_path": ".\\state\\peer-install-replay-cache.json",
+  "identity_store_path": ".\\identity.local.json",
+  "endpoint_registry_path": ".\\endpoint-registry.json",
+  "peer_install_envelope_secret": "lab-peer-install-envelope-secret-change-me",
+  "peer_install_delivery_mode": "disabled",
+  "peer_lifecycle_delivery_required": false,
+  "validate_manual_sa_plan": true,
+  "endpoint_registry": {
+    "default_ttl_seconds": 300,
+    "records": {}
+  },
+  "peers": {
+    "User1": {
+      "endpoint": "192.168.101.10",
+      "overlay_endpoint": "192.168.101.10:9000",
+      "public_identity_key": "ed25519-public-key-placeholder-user1",
+      "allowed_selector": "icmp"
+    },
+    "Windows11-U13": {
+      "endpoint": "192.168.113.199",
+      "overlay_endpoint": "192.168.113.199:9000",
+      "public_identity_key": "ed25519-public-key-placeholder-u13",
+      "allowed_selector": "icmp"
+    }
+  },
+  "identity_public_keys": {
+    "User1": "ed25519-public-key-placeholder-user1",
+    "Windows11-U13": "ed25519-public-key-placeholder-u13"
+  },
+  "route_policy": {
+    "mode": "random_two_hop",
+    "hop_count": 2,
+    "candidate_intermediates": [
+      "User1",
+      "User2",
+      "User3",
+      "OpenWRT-User11",
+      "Windows11-U13"
+    ]
+  },
+  "maintenance": {
+    "enabled": true,
+    "interval_seconds": 30,
+    "auto_rekey": true,
+    "expire_cleanup": true
+  },
+  "retry_policy": {
+    "connect_timeout_ms": 30000,
+    "max_attempts": 3,
+    "backoff_ms": 1000,
+    "cleanup_stale_after_seconds": 120
+  }
+}
